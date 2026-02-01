@@ -1,7 +1,12 @@
 #!/bin/bash
-TICKER="xmr"
+ticker="xmr"
 if [[ $2 = "-t" ]]; then
-  TICKER=$3
+  ticker=$3
 fi
 
-dig -t TXT $1 +short | grep -P '(?<=oa1:'"$TICKER"' recipient_address=)(\w+)' -o || (echo "error: no openalias records found for $TICKER" && exit 1)
+result=$(dig -t TXT $1 +short)
+if [ "$result" = "" ]; then
+  echo "error: no TXT entries"
+  exit 1
+fi
+grep -P 'oa1:'"$ticker"' .*?recipient_address=\K.*?(?=;)' -o <<< "$result" || (echo "error: no openalias records found for $ticker" && exit 1)
