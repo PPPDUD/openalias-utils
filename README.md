@@ -10,6 +10,6 @@ Parse TXT entries to fetch the OpenAlias address for a given cryptocurrency. The
 `./parse-openalias btc < myfile` (read the file `myfile` and get a Bitcoin address from it; `myfile` must be in the format provided by `dig -t TXT example.com +short`)
 
 ## openresolve-sh
-An unofficial stand-in replacement for [openresolve](https://github.com/lunar-sh/openresolve).
+An unofficial stand-in replacement for [openresolve](https://github.com/lunar-sh/openresolve); inspired by [this Reddit comment](https://www.reddit.com/r/Monero/comments/1qkyizb/comment/o1b06vk/).
 
 The error messsages don't always behave the same as openresolve's do, so you should check the exit status (`$?` on Bash) when using it in scripts.
