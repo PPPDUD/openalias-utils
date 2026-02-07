@@ -11,5 +11,6 @@ fpm \
   --description "Miscellaneous utilities for parsing OpenAlias entries in DNS records." \
   --url "https://github.com/PPPDUD/openalias-utils" \
   --maintainer "PPPDUD <mojavesoft@gmail.com>" \
+  --depends "bash" \
   openresolve-sh.sh=/usr/bin/openresolve-sh \
   parse-openalias.sh=/usr/bin/parse-openalias
