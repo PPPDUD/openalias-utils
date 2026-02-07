@@ -1,4 +1,5 @@
 #!/bin/bash
+# Create a Debian package from the openalias-utils suite. Requires fpm.
 chmod +x openresolve-sh.sh parse-openalias.sh
 fpm \
   -s dir -t deb \
